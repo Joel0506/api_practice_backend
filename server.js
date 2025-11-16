@@ -6,7 +6,7 @@ const app = express();
 
 // ✅ CORS configuration
 app.use(cors({
-  origin: "https://joel0506.github.io/api_practice",
+  origin: "https://joel0506.github.io",
 }));
 
 app.use(express.json());
@@ -36,5 +36,6 @@ app.post("/api/verify-otp", (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
 
