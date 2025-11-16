@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 
+const PORT = process.env.PORT || 5000;
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -31,4 +33,5 @@ app.post("/api/verify-otp", (req, res) => {
   res.status(400).json({ success: false, message: "Invalid OTP" });
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
