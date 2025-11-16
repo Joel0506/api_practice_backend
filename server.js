@@ -4,14 +4,16 @@ import cors from "cors";
 const PORT = process.env.PORT || 5000;
 
 const app = express();
-app.use(cors());
-app.use(express.json());
 
 app.use(cors({
   origin: "https://joel0506.github.io", // your frontend URL
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+app.use(express.json());
+
+
 
 let storedOtp = null;
 
@@ -40,6 +42,7 @@ app.post("/api/verify-otp", (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
 
 
