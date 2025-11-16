@@ -7,6 +7,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use(cors());
+
 let storedOtp = null;
 
 function generateOTP() {
@@ -34,4 +36,5 @@ app.post("/api/verify-otp", (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
