@@ -1,18 +1,11 @@
 import express from "express";
 import cors from "cors";
 
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 // ✅ CORS configuration
-app.use(cors({
-  origin: [
-    "https://joel0506.github.io", // Production frontend
-    "http://localhost:5500"       // Local development
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
+app.use(cors());
 
 app.use(express.json());
 
