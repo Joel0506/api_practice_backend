@@ -5,7 +5,9 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 // ✅ CORS configuration
-app.use(cors());
+app.use(cors({
+  origin: "https://joel0506.github.io/api_practice",
+}));
 
 app.use(express.json());
 
@@ -34,4 +36,5 @@ app.post("/api/verify-otp", (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
